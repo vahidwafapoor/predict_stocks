@@ -12,7 +12,7 @@ def get_data(amazon):
         csvFileReader=csv.reader(csvfile)
         next(csvFileReader)
         for row in csvFileReader:
-            # dates.append(int(row[0].split('_')[0]))
+            dates.append(int(row[0].split('-')[0]))
             prices.append(float(row[1]))
     return
 
@@ -43,6 +43,6 @@ def predict_price(dates, prices, x):
 get_data('amazon.csv')
 
 
-predicted_price = predict_price(dates, prices, 29)
+predict_price = predict_price(dates, prices, 29)
 
 print(predict_price)
